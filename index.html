@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画 paly state</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .animation {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 100px auto;
+            -webkit-animation: move .5s infinite alternate;
+            animation:move .5s infinite alternate;
+        }
+        @keyframes move {
+            0% {
+                transform: translate(-100px,0);
+            }
+            100% {
+                transform: translate(100px,0);
+            }
+        }
+        .stop:hover ~.animation {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS动画的运行和播放</h1>
+    <div class="btn stop">stop</div>
+    <div class="animation"></div> 
+</body>
+</html>
